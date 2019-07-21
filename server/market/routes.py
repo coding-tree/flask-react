@@ -1,7 +1,6 @@
 from flask import Blueprint, request, jsonify
-from sqlalchemy import update
 
-from server.models import Market
+from server.models import Product
 from server import db
 
 market = Blueprint('market', __name__)
@@ -12,7 +11,7 @@ def add_product():
         name = request.json.get('name')
         description = request.json.get('description')
         price = request.json.get('price')
-        db.session.add(Market(name=name, desc=description, price=price))
+        db.session.add(Product(name=name, desc=description, price=price))
         db.session.commit()
     except: 
             return jsonify(result={
@@ -26,7 +25,7 @@ def add_product():
     
 @market.route('/api/product/del/<product_id>')
 def remove_product(product_id):
-    product = Market.query.filter_by(id=product_id).first_or_404()
+    product = Product.query.filter_by(id=product_id).first_or_404()
     return jsonify(result={
         'message': 'Produkt został usunięty',
         'category': 'info'
@@ -35,7 +34,7 @@ def remove_product(product_id):
 @market.route('/api/product/update/<product_id>', methods=['POST'])
 def update_product(product_id):
     allowed_fields = ('name', 'desc', 'price')
-    product = Market.query.filter_by(id=product_id).first_or_404()
+    product = Product.query.filter_by(id=product_id).first_or_404()
 
     for field in allowed_fields:
         fieldValue = request.json.get(field)
@@ -51,7 +50,7 @@ def update_product(product_id):
 
 @market.route('/api/products', methods=['GET'])
 def products():
-    products = Market.query.all()
+    products = Product.query.all()
     data = []
     for product in products:
         data.append(dict(product={

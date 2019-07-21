@@ -34,8 +34,10 @@ from server.auth.routes import auth
 from server.home.routes import home_bp
 from server.profile.routes import profile
 from server.market.routes import market
+from server.support.routes import support
 app.register_blueprint(auth)
 app.register_blueprint(home_bp)
 app.register_blueprint(profile)
 app.register_blueprint(market)
+app.register_blueprint(support)
 
