@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+        <title>Nazwa twojej strony</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta name="google-site-verification" content="dVlcQAzUID9-j8xKM1VzL_8Ge6CUCxnFCtQ2xPFUAJU" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type=text/css href="assets/css/main.css">
+        <link rel="shortcut icon" href="assets/favicon/favicon.png">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff">
+        <script type="text/javascript" src="assets/js/windutils.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+            new Crate({
+                server: '223072196887707648',
+                channel: '592333511449378826',
+                shard: 'https://disweb.deploys.io'
+            })
+        </script>
+     </head>
+    <body>
+    <header id="header">
+            <div class="inner">
+                <a href="/" class="logo">tytuł</a>
+                <nav id="nav">
+                        <a href="{{ url_for('home.home') }}">Home</a>
+                        <a href="{{ discord.url }}">Discord</a>
+                        <a href="">Market</a>
+                        <a href="">Support</b></a>
+                </nav>
+                <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+            </div>
+        </header>
+        <div id="notification"><p id="newsnotif" class="notification">Witamy!</p></div>
+        <section id="banner" style="background-image:url(images/banner-blurred.png)">
+            <h1>Rejestracja</h1>
+            <p>Zostań członkiem naszej społeczności już dziś! Zakładając konto na naszej stronie</p>
+        </section>
+    <section class="wrapper">
+        <div class="inner" style="margin-left, margin-right: 250px;">
+        <div class="content-section">
+        <form method="POST" action="" novalidate>
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Dołącz już dziś!</legend>
+                <div class="form-group">
+                    <label class="form-control-label" for="exampleInputPassword1">Nazwa</label>
+                    <input type="email" class="form-control form-control-lg" id="example" placeholder="Nazwa użytkownika">
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="exampleInputPassword1">Hasło</label>
+                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Hasło">
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="exampleInputPassword1">Powtórz hasło</label>
+                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="powtorz hasło">
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="exampleInputPassword1">Email</label>
+                    <input type="email" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Email">
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-info" style="background-color: #5cb85c; border-radius: 0;">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="pt-3">
+        <small class="text-muted">
+            Posiadasz już konto? <a class="ml-2" href="{{ url_for('auth.login') }}">Zaloguj się</a>
+        </small>
+    </div>
+</section>
+    </body>
+        <footer id="footer">
+        <div class="inner">
+        <div class="flex">
+        <div class="copyright">&copy; Website made with <3 by LSD.</div>
+        </div>
+        </div>
+        </footer>
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function() {
+                getNews();
+            });
+            function getNews() {
+                $.get('newsProxy.php?cachebust=" + Math.random(), function(data) {
+                    data = $.trim(data);
+                    document.getElementById("newsnotif").innerHTML = data;
+                    setTimeout(getNews(), 9000);
+                });
+            }
+        </script>
+        <script type="text/javascript" src="../static/js/vanilla-tilt.js"></script>
+    </div>
+  </body>
+</html>
