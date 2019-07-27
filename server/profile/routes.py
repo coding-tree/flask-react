@@ -46,5 +46,5 @@ def update_profile():
     if current_user.is_authenticated:
         newAvatar = request.json.get('av')
         newPassword = request.jeson.get('npass')
-        newUsername = reqest.json.get('nuname')
+        newUsername = request.json.get('nuname')
     else: return 400

@@ -63,7 +63,9 @@ class Replies(db.Model):
 class Ticket(db.Model):
     __tablename__= 'ticket'
     id = db.Column(db.Integer, primary_key=True)
-    status = db.Column(db.String(20))
+    status = db.Column(db.String(20), default='OPEN')
+    user = db.relationship('User', secondary=user_tickets, lazy='subquery',
+        backref=db.backref('user', lazy=True, uselist=False))
     subject = db.Column(db.String(120), unique=False, nullable=False)
     message = db.Column(db.String(1500))
     created_on = db.Column(db.DateTime, nullable=False, default=datetime.now())
