@@ -20,11 +20,12 @@ class BadToken(Exception):
 def login():
     username = request.json.get('username')
     password = request.json.get('password')
+    print(username, password)
     if username is None or password is None:
         return jsonify(result={
             'message':'Pola nie mogą być puste.',
             'category':'warning'
-        })
+        }), 422
     user = User.query.filter_by(username=username).first()
     if user and bcrypt.check_password_hash(user.password, password):
         login_user(user)
@@ -32,7 +33,7 @@ def login():
         return jsonify(result={
             'message':'Błędny login lub hasło.',
             'category':'warning'
-        })
+        }), 422
     return jsonify(result={
         'message':'Zostałeś pomyślnie zalogowany.',
         'category':'success',

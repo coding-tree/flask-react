@@ -9,5 +9,5 @@ home_bp = Blueprint('home', __name__)
 
 @home_bp.route('/hello', methods=['GET'])
 def hello():
-    return 'Hello world'
+    return jsonify('Hello world')
 

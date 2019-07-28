@@ -1,4 +1,5 @@
 from flask_bcrypt import Bcrypt
+from flask_cors import CORS
 from flask_login import LoginManager, AnonymousUserMixin
 from flask_mail import Mail
 from flask import Flask
@@ -21,6 +22,7 @@ class Anonymous(AnonymousUserMixin):
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
+CORS(app)
 s = URLSafeTimedSerializer(Settings.SECRET_KEY)
 mail = Mail(app)
 login_manager = LoginManager(app)

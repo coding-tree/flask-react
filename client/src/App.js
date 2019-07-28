@@ -8,18 +8,19 @@ import google from './template/assets/img/icons/common/google.svg'
 
 
 function App() {
-  const [message, setMessage] = useState("START");
+  var user = {'username': 'LSD', 'password':'test1234'}
 
-  setTimeout(() => {
-    fetch("http://localhost:5000/hello",)
-      .then(res => {
-        return res.text();
-      })
-      .then(response => {
-        console.log(response, message);
-        setMessage(response);
-      });
-  }, 3000);
+  function login(){
+      fetch("/api/login", {
+        headers:{
+          'Content-Type': 'application/Json'
+        },
+        method: 'POST', 
+        body: JSON.stringify(user)}).then((response) => response.json()).then((responseJson) => {
+          var response = responseJson
+          console.log(response)
+        })
+      }
 
   return (
     <div className="App">
@@ -152,7 +153,7 @@ function App() {
                     <label className="custom-control-label" htmlFor=" customCheckLogin"><span>Zapamiętaj mnie</span></label>
                   </div>
                   <div className="text-center">
-                    <button type="button" className="btn btn-primary my-4">Zaloguj</button>
+                    <button onClick={login} type="button" className="btn btn-primary my-4">Zaloguj</button>
                   </div>
                 </form>
               </div>
