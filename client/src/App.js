@@ -34,8 +34,8 @@ function App() {
           <div className="navbar-collapse-header">
             <div className="row">
               <div className="col-6 collapse-brand">
-                <a href="">
-                  <img src=""/>
+                <a href="home">
+                  <img src="" alt="logo"/>
                 </a>
               </div>
               <div className="col-6 collapse-close">
@@ -49,44 +49,44 @@ function App() {
           <ul className="navbar-nav navbar-nav-hover align-items-lg-center">
             
             <li className="nav-item dropdown">
-              <a href="#" className="nav-link" data-toggle="dropdown" role="button">
+              <a href="profile" className="nav-link" data-toggle="dropdown" role="button">
                 <i className="ni ni-collection d-lg-none"></i>
                 <span className="nav-link-inner--text">LSD</span>
               </a>
               <div className="dropdown-menu">
-                <a href="#" className="dropdown-item"><i className="fas fa-envelope"></i>Wiadomości</a>
-                <a href="#" className="dropdown-item"><i className="fas fa-user-circle"></i>Profil</a>
-                <a href="#" className="dropdown-item"><i className="fas fa-door-open"></i>Wyloguj</a>
+                <a href="messages" className="dropdown-item"><i className="fas fa-envelope"></i>Wiadomości</a>
+                <a href="profile" className="dropdown-item"><i className="fas fa-user-circle"></i>Profil</a>
+                <a href="logout" className="dropdown-item"><i className="fas fa-door-open"></i>Wyloguj</a>
               </div>
             </li>
           </ul>
           <ul className="navbar-nav align-items-lg-center ml-lg-auto">
             <li className="nav-item">
-              <a className="nav-link nav-link-icon" href="#">
+              <a className="nav-link nav-link-icon" href="forum">
                 <i className="fas fa-comments"></i>
                 <span className="nav-link-inner--text d-lg-none">Forum</span>
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link nav-link-icon" href="#">
+              <a className="nav-link nav-link-icon" href="support">
                 <i className="far fa-life-ring"></i>
                 <span className="nav-link-inner--text d-lg-none">Support</span>
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link nav-link-icon" href="#">
+              <a className="nav-link nav-link-icon" href="market">
                 <i className="fas fa-shopping-cart"></i>
                 <span className="nav-link-inner--text d-lg-none">Market</span>
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link nav-link-icon" href="#">
+              <a className="nav-link nav-link-icon" href="dicord">
                 <i className="fab fa-discord"></i>
                 <span className="nav-link-inner--text d-lg-none">Discord</span>
               </a>
             </li>
             <li className="nav-item d-none d-lg-block ml-lg-4">
-              <a href="#" className="btn btn-neutral btn-icon">
+              <a href="register" className="btn btn-neutral btn-icon">
                 <span className="btn-inner--icon">
                   <i className="fa fa-user-plus "></i>
                 </span>
@@ -117,12 +117,12 @@ function App() {
               <div className="card-header bg-white pb-5">
                 <div className="text-muted text-center mb-3"><small>Zaloguj się za pomocą</small></div>
                 <div className="btn-wrapper text-center">
-                  <a href="#" className="btn btn-neutral btn-icon">
-                    <span className="btn-inner--icon"><img src={facebook}/></span>
+                  <a href="facebook" className="btn btn-neutral btn-icon">
+                    <span className="btn-inner--icon"><img src={facebook} alt="facebook"/></span>
                     <span className="btn-inner--text">Facebook</span>
                   </a>
-                  <a href="#" className="btn btn-neutral btn-icon">
-                    <span className="btn-inner--icon"><img src={google}/></span>
+                  <a href="google" className="btn btn-neutral btn-icon">
+                    <span className="btn-inner--icon"><img src={google} alt="google"/></span>
                     <span className="btn-inner--text">Google</span>
                   </a>
                 </div>
@@ -130,7 +130,7 @@ function App() {
               <div className="card-body px-lg-5 py-lg-5">
                 <div className="text-center text-muted mb-4">
                 </div>
-                <form role="form">
+                <form>
                   <div className="form-group mb-3">
                     <div className="input-group input-group-alternative">
                       <div className="input-group-prepend">
@@ -159,10 +159,10 @@ function App() {
             </div>
             <div className="row mt-3">
               <div className="col-6">
-                <a href="#" className="text-light"><small>Zapomniałeś hasła?</small></a>
+                <a href="forgetpassword" className="text-light"><small>Zapomniałeś hasła?</small></a>
               </div>
               <div className="col-6 text-right">
-                <a href="#" className="text-light"><small>Zarejestruj się!</small></a>
+                <a href="register" className="text-light"><small>Zarejestruj się!</small></a>
               </div>
             </div>
           </div>
