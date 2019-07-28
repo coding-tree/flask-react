@@ -5,10 +5,9 @@ from server.settings import Discord
 
 home_bp = Blueprint('home', __name__)
 
-@home_bp.route('/')
-def home():
-    auth = request.headers.get("X-Api-Key").decode()
-    if auth == 'lsdkkapp':
-        return jsonify({"message": "OK: Authorized"}), 200
-    else:
-        return jsonify({"message": "ERROR: Unauthorized"}), 401
+
+
+@home_bp.route('/hello', methods=['GET'])
+def hello():
+    return 'Hello world'
+
