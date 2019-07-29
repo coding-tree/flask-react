@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Profile() {
+function Tickets() {
     return (
-      <div>
-        <header class="header-global">
+        <div>
+            <header class="header-global">
           <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
             <div class="container">
               LOGO
@@ -80,63 +80,79 @@ function Profile() {
         <span></span>
         <span></span>
       </div>
-      <div class="separator separator-bottom separator-skew">
-        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
-        </svg>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container">
-        <div class="card card-profile shadow mt--300">
-          <div class="px-4">
-            <div class="row justify-content-center">
-              <div class="col-lg-3 order-lg-2">
-                <div class="card-profile-image">
-                  <a href="#">
-                    <img src="assets/img/theme/team-4-800x800.jpg" class="rounded-circle"/>
-                  </a>
-                </div>
-              </div>
-              <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
-                <div class="card-profile-actions py-4 mt-lg-0">
-                  <a href="#" class="btn btn-sm  mr-4"></a>
-                  <a href="#" class="btn btn-sm btn-default float-right">Wyślij wiadomość</a>
-                </div>
-              </div>
-              <div class="col-lg-4 order-lg-1">
-                <div class="card-profile-stats d-flex justify-content-center">
-                  <div>
-                    <span class="heading">26.07.2019</span>
-                    <span class="description">Data rejestracji</span>
-                  </div>
-                  <div>
-                    <span class="heading">Wczoraj 14:20</span>
-                    <span class="description">Ostatnio Aktywny/a</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="text-center mt-5">
-              <h3>Imie Nazwisko<span class="font-weight-light">, 20</span></h3>
-              <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i>Warszawa, Polska</div>
-              <div class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i>Lorem Ipsum is simply dummy text!</div>
-            </div>
-            <div class="mt-5 py-5 border-top text-center">
-              <div class="row justify-content-center">
-                <div class="col-lg-9">
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                </div>
-                
+      <div class="container shape-container d-flex align-items-center py-lg">
+          <div class="col px-4">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-lg-64 text-center">
+                <p class="lead text-white" style={{fontSize:36+'px', marginBottom:150+'px'}}>Twoje zgloszenia.</p>
               </div>
             </div>
           </div>
         </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="card card-profile shadow" style={{marginTop: -250+'px'}}>
+          <div class="px-4">
+            <div class='table-responsive'>
+ <table id="tablePreview" class="table table-hover">
+   <thead>
+     <tr>
+       <th>#</th>
+       <th>Temat</th>
+       <th>Status</th>
+       <th>Data utworzenia</th>
+       <th>Ostatnia odpowiedź</th>
+       <th></th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <th scope="row">1</th>
+       <td>Pomoc</td>
+       <td><span class="badge badge-success">Otwarte</span></td>
+       <td>27/07/2019</td>
+       <td>Mark</td>
+       <td>
+           <button type="button" class="btn btn-default btn-sm">Podgląd</button>
+           <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-edit"></i>Edytuj</button>
+       </td>
+     </tr>
+   </tbody>
+ </table>
+ <div style={{marginBottom: 10+'px'}}>
+ <button type="button" class="btn btn-secondary"><i class="fas fa-plus"/></button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+ </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
     </section>
   </main>
-      </div>
+        </div>
     )
-  
 }
-export default Profile
+export default Tickets

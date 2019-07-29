@@ -1,6 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## API Instalation
+``sh
+$ git clone https://github.com/LSDkk5/flask-react
+$ cd flask-react
+$ virtualenv venv
+$ source venv/bin/activate
+$ pip install -r REQUIREMENTS.txt
+``
 
-## Available Scripts
+## Run development server
+``sh
+$ python initdb.py // Create tables in database
+$ python run.py
+
+
+ * Serving Flask app "api" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ 
+``
+## Available Scriptss
 
 In the project directory, you can run:
 
