@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link } from 'react-router-dom'
 
 import '../template/assets/css/wr.css'
@@ -8,21 +8,32 @@ import facebook from '../template/assets/img/icons/common/facebook.svg'
 import google from '../template/assets/img/icons/common/google.svg'
 
 function Login() {
+
+   const [email, setEmail] = useState('');
+   const [password, setPassword] = useState('');
+
    const loginUser = () => {
     console.log("Login handler function", "CLICKED");
+
+    // TODO form validation
+    console.log("User credentials", email, password);
 
     fetch("/api/login", {
       headers: {
         "Content-Type": "application/Json"
       },
       method: "POST",
-      body: JSON.stringify(user)
+      body: JSON.stringify({
+        email: email,
+        password: password
+      })
     })
       .then(response => response.json())
       .then(responseJson => {
         var response = responseJson;
         console.log(response);
       });
+   
   };
 
       return (
@@ -140,7 +151,7 @@ function Login() {
                       <div className="input-group-prepend">
                         <span className="input-group-text"><i className="ni ni-email-83"></i></span>
                       </div>
-                      <input className="form-control" placeholder="Email" type="email"/>
+                      <input className="form-control" placeholder="Email" type="email" onChange={(e) => setEmail(e.target.value)}/>
                     </div>
                   </div>
                   <div className="form-group">
@@ -148,7 +159,7 @@ function Login() {
                       <div className="input-group-prepend">
                         <span className="input-group-text"><i className="ni ni-lock-circle-open"></i></span>
                       </div>
-                      <input className="form-control" placeholder="Password" type="password"/>
+                      <input className="form-control" placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)}/>
                     </div>
                   </div>
                   <div className="custom-control custom-control-alternative custom-checkbox">
