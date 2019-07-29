@@ -1,14 +1,16 @@
 ## API Instalation
-``sh
+```sh
+
 $ git clone https://github.com/LSDkk5/flask-react
 $ cd flask-react
 $ virtualenv venv
 $ source venv/bin/activate
 $ pip install -r REQUIREMENTS.txt
-``
+
+```
 
 ## Run development server
-``sh
+```sh
 $ python initdb.py // Create tables in database
 $ python run.py
 
@@ -19,8 +21,8 @@ $ python run.py
    Use a production WSGI server instead.
  * Debug mode: off
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
- 
-``
+
+```
 ## Available Scriptss
 
 In the project directory, you can run:
