@@ -8,10 +8,23 @@ import facebook from "../template/assets/img/icons/common/facebook.svg";
 import google from "../template/assets/img/icons/common/google.svg";
 
 function Login() {
-
+  
   const loginUser = () => {
     console.log("Login handler function", "CLICKED");
-  }
+
+    fetch("/api/login", {
+      headers: {
+        "Content-Type": "application/Json"
+      },
+      method: "POST",
+      body: JSON.stringify(user)
+    })
+      .then(response => response.json())
+      .then(responseJson => {
+        var response = responseJson;
+        console.log(response);
+      });
+  };
 
   return (
     <div>
@@ -70,13 +83,16 @@ function Login() {
                   </a>
                   <div className="dropdown-menu">
                     <a href="messages" className="dropdown-item">
-                      <i className="fas fa-envelope" />Wiadomości
+                      <i className="fas fa-envelope" />
+                      Wiadomości
                     </a>
                     <a href="profile" className="dropdown-item">
-                      <i className="fas fa-user-circle" />Profil
+                      <i className="fas fa-user-circle" />
+                      Profil
                     </a>
                     <a href="logout" className="dropdown-item">
-                      <i className="fas fa-door-open" />Wyloguj
+                      <i className="fas fa-door-open" />
+                      Wyloguj
                     </a>
                   </div>
                 </li>
