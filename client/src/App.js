@@ -1,27 +1,20 @@
-
 import React from "react";
-import './template/assets/css/wr.css'
-import './template/assets/vendor/nucleo/css/nucleo.css'
+import { Route, BrowserRouter as Router } from "react-router-dom";
+import "./template/assets/css/wr.css";
+import "./template/assets/vendor/nucleo/css/nucleo.css";
 
+import { Home, Profile, Login, Register, Tickets } from "./components";
 
 function App() {
-  // var user = {'username': 'LSD', 'password':'test1234'}
-
-  // function login(){
-  //     fetch("/api/login", {
-  //       headers:{
-  //         'Content-Type': 'application/Json'
-  //       },
-  //       method: 'POST', 
-  //       body: JSON.stringify(user)}).then((response) => response.json()).then((responseJson) => {
-  //         var response = responseJson
-  //         console.log(response)
-  //       })
-  //     }
-
   return (
     <div className="App">
-      
+      <Router>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/profile" component={Profile} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+        <Route path="/tickets" component={Tickets} />
+      </Router>
     </div>
   );
 }
