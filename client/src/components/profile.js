@@ -3,7 +3,6 @@ import React from 'react'
 function Profile() {
     return (
       <div>
-<<<<<<< HEAD
         <header class="header-global">
           <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
             <div class="container">
@@ -136,9 +135,6 @@ function Profile() {
       </div>
     </section>
   </main>
-=======
-        <h1>User Home</h1>
->>>>>>> Move router to App. Small cleanup
       </div>
     )
   

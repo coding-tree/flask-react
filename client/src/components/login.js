@@ -11,6 +11,10 @@ function Login() {
 
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
+   const [errors, setErrors] = useState({
+     category: "",
+     message: "",
+   });
 
    const loginUser = () => {
     console.log("Login handler function", "CLICKED");
@@ -24,7 +28,7 @@ function Login() {
       },
       method: "POST",
       body: JSON.stringify({
-        email: email,
+        username: email,
         password: password
       })
     })
@@ -32,12 +36,14 @@ function Login() {
       .then(responseJson => {
         var response = responseJson;
         console.log(response);
+        setErrors(response.result);
       });
    
   };
 
       return (
           <div>
+            {errors.category} - {errors.message}
             <header className="header-global">
     <nav id="navbar-main" className="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
       <div className="container">
